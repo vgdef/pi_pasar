@@ -88,7 +88,7 @@ class Sayuran extends StatelessWidget {
         Padding(
           padding: EdgeInsets.all(kDefaultPadding),
           child: Text(
-            'Recommended',
+            'Sayuran  :',
             style: TextStyle(
               fontSize: 20,
               letterSpacing: 1,

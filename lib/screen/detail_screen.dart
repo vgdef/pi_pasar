@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:pi_pasar/buah_buahan.dart';
 import 'package:pi_pasar/sayur_sayuran.dart';
 
 var informationTextStyle = TextStyle(fontFamily: 'Oxygen');
 
 class DetailScreen extends StatelessWidget {
   final SayurSayuran needs;
-
-  DetailScreen({this.needs});
+  final BuahBuahan need;
+  DetailScreen({this.needs, this.need});
 
   @override
   Widget build(BuildContext context) {
@@ -46,25 +47,47 @@ class DetailScreen extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.only(top: 16.0),
-              child: Text(
-                needs.name,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 30.0,
-                  fontFamily: 'Staatliches',
-                ),
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    needs.name,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 30.0,
+                      fontFamily: 'Staatliches',
+                    ),
+                  ),
+                  Text(
+                    need.name,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 30.0,
+                      fontFamily: 'Staatliches',
+                    ),
+                  ),
+                ],
               ),
             ),
             Container(
               padding: EdgeInsets.all(16.0),
-              child: Text(
-                needs.description,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 16.0,
-                  fontFamily: 'Oxygen',
+              child: Column(children: <Widget>[
+                Text(
+                  needs.description,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    fontFamily: 'Oxygen',
+                  ),
                 ),
-              ),
+                Text(
+                  need.description,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    fontFamily: 'Oxygen',
+                  ),
+                )
+              ]),
             ),
           ],
         ),
