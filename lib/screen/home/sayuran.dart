@@ -21,7 +21,7 @@ class Sayuran extends StatelessWidget {
             bottom: kDefaultPadding,
           ),
           child: Container(
-            width: size.width * 0.55,
+            width: size.width * 0.50,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),

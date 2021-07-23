@@ -20,7 +20,10 @@ class DetailScreens extends StatelessWidget {
           children: <Widget>[
             Stack(
               children: <Widget>[
-                Image.asset(needs.imageAsset),
+                Image.asset(
+                  needs.imageAsset,
+                  fit: BoxFit.contain,
+                ),
                 SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.all(7.0),
@@ -39,7 +42,6 @@ class DetailScreens extends StatelessWidget {
                             },
                           ),
                         ),
-                        FavoriteButton(),
                       ],
                     ),
                   ),
@@ -57,6 +59,7 @@ class DetailScreens extends StatelessWidget {
                       top: kDefaultPadding,
                       bottom: kDefaultPadding,
                     ),
+                    width: MediaQuery.of(context).size.width,
                     height: size.height * 0.8,
                     decoration: BoxDecoration(
                       color: kForthColor,
@@ -116,6 +119,7 @@ class DetailScreens extends StatelessWidget {
                       ),
                     ),
                   ),
+                  FavoriteButton(),
                 ],
               ),
             ),
@@ -138,8 +142,8 @@ class _FavoriteButtonState extends State<FavoriteButton> {
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(
-        isFavorite ? Icons.favorite : Icons.favorite_border,
-        color: Colors.red,
+        isFavorite ? Icons.favorite : Icons.favorite_border_outlined,
+        color: Colors.green,
       ),
       onPressed: () {
         setState(() {

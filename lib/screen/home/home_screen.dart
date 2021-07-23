@@ -19,6 +19,18 @@ class HomeScreen extends StatelessWidget {
             size: 30,
           ),
         ),
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(
+              right: kDefaultPadding,
+            ),
+            child: Icon(
+              Icons.shopping_bag_outlined,
+              color: kTextColor,
+              size: 30,
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
