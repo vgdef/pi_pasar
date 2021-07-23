@@ -18,7 +18,7 @@ var buahBuahan = [
     name: 'Melon',
     price: 'Rp. 85.000/buah',
     description: 'Buah Melon Manis',
-    imageAsset: 'images/melon.jpg',
+    imageAsset: 'images/melonn.png',
   ),
   BuahBuahan(
     name: 'Lemon',

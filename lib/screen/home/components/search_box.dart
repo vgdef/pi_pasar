@@ -22,7 +22,7 @@ class SearchBox extends StatelessWidget {
                 horizontal: kDefaultPadding,
               ),
               fillColor: kTextColor,
-              hintText: 'Search here....',
+              hintText: 'Cari disini....',
               suffixIcon: Icon(
                 Icons.search_rounded,
                 size: 25,

@@ -4,16 +4,22 @@ class SayurSayuran {
   String description;
   String imageAsset;
 
-  SayurSayuran({this.name, this.price, this.description, this.imageAsset});
+  SayurSayuran({
+    this.name,
+    this.price,
+    this.description,
+    this.imageAsset,
+  });
 }
 
 var sayurSayuran = [
   SayurSayuran(
-      name: 'Sereh',
-      price: 'Rp. 1000',
-      description:
-          'Sereh / Serai Fresh dan Segar ukuran 1000gram.Jenis sereh lokal BUKAN sereh bangkok',
-      imageAsset: 'images/sereh.jpg'),
+    name: 'Sereh',
+    price: 'Rp. 1000',
+    description:
+        'Sereh / Serai Fresh dan Segar ukuran 1000gram.Jenis sereh lokal BUKAN sereh bangkok',
+    imageAsset: 'images/sereh.jpg',
+  ),
   SayurSayuran(
       name: 'Wortel',
       price: 'Rp. 2000',

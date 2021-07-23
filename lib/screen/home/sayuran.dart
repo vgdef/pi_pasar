@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pi_pasar/constants.dart';
-import 'package:pi_pasar/screen/detail_screen.dart';
+import 'package:pi_pasar/screen/detail/detail_screens.dart';
 import 'package:pi_pasar/sayur_sayuran.dart';
 
 class Sayuran extends StatelessWidget {
@@ -11,7 +11,7 @@ class Sayuran extends StatelessWidget {
     return InkWell(
         onTap: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return DetailScreen(needs: sayurSayurann);
+            return DetailScreens(needs: sayurSayurann);
           }));
         },
         child: Padding(
@@ -88,7 +88,7 @@ class Sayuran extends StatelessWidget {
         Padding(
           padding: EdgeInsets.all(kDefaultPadding),
           child: Text(
-            'Sayuran  :',
+            'Sayuran ',
             style: TextStyle(
               fontSize: 20,
               letterSpacing: 1,
