@@ -23,7 +23,8 @@ var buahBuahan = [
   BuahBuahan(
     name: 'Lemon',
     price: 'Rp. 10.000/kg',
-    description: 'Buah Lemon Asam',
+    description:
+        'Keunggulan Lemon California Lokal : 1. Harga jauh lebih murah dibanding lemon California Import. 2. Buah Lebih Fresh dan segar karena langsung dipanen setiap hari di Indonesia',
     imageAsset: 'images/lemon.png',
   ),
   BuahBuahan(

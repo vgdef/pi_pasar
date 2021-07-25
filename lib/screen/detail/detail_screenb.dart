@@ -59,7 +59,7 @@ class DetailScreenb extends StatelessWidget {
                     ),
                     height: size.height * 0.8,
                     decoration: BoxDecoration(
-                      color: kPrimaryColor,
+                      color: kForthColor,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(35),
                         topRight: Radius.circular(35),
