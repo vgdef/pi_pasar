@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pi_pasar/constants.dart';
-import 'package:pi_pasar/screen/detail/detail_screens.dart';
 import 'package:pi_pasar/model/sayur_sayuran.dart';
+import 'package:pi_pasar/screen/detail/details/detail_screens.dart';
 
 class Sayuran extends StatelessWidget {
   Widget _buildNeeds(BuildContext context, int index) {

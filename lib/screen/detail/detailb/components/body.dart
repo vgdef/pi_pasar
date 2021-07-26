@@ -6,7 +6,7 @@ import 'package:pi_pasar/model/sayur_sayuran.dart';
 class Body extends StatelessWidget {
   final BuahBuahan need;
 
-  Body({this.need, SayurSayuran needs});
+  Body({this.need});
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class Body extends StatelessWidget {
                   padding: EdgeInsets.only(
                     left: kDefaultPadding,
                     right: kDefaultPadding,
-                    top: size.height * 0.9,
+                    top: size.height * 0.12,
                   ),
                   decoration: BoxDecoration(
                     color: Colors.white,

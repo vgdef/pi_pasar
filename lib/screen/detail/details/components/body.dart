@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pi_pasar/constants.dart';
 import 'package:pi_pasar/model/buah_buahan.dart';
 import 'package:pi_pasar/model/sayur_sayuran.dart';
-import 'package:pi_pasar/screen/detail/details/detail_screens.dart';
 
 class Body extends StatelessWidget {
   final SayurSayuran needs;
@@ -49,7 +48,7 @@ class Body extends StatelessWidget {
                   padding: EdgeInsets.only(
                     left: kDefaultPadding,
                     right: kDefaultPadding,
-                    top: size.height * 0.9,
+                    top: size.height * 0.12,
                   ),
                   decoration: BoxDecoration(
                     color: Colors.white,

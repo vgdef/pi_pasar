@@ -18,7 +18,7 @@ var buahBuahan = [
     price: 'RP. 10.000/kg',
     colors: kSixthColor,
     description:
-        'Buah Apel Malang yang renyah dengan rasa manis asam dan beraroma wangi ini enak dimakan segar atau dibuat minuman serta dessert.Untuk menjaga kesehatan, selain olahraga dan makan dengan pola sehat, makan sebutir apel dianjurkan oleh para ahli.',
+        'Buah Apel Malang yang renyah dengan rasa manis asam dan beraroma wangi ini enak dimakan segar atau dibuat minuman serta dessert.rUntuk menjaga kesehatan, selain olahraga dan makan dengan pola sehat, makan sebutir apel dianjurkan oleh para ahli.',
     imageAsset: 'images/apel.png',
   ),
   BuahBuahan(
