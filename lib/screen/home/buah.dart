@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pi_pasar/buah_buahan.dart';
+import 'package:pi_pasar/model/buah_buahan.dart';
 import 'package:pi_pasar/constants.dart';
-import 'package:pi_pasar/screen/detail/detail_screenb.dart';
+import 'package:pi_pasar/screen/detail/detailb/detail_screenb.dart';
 
 class Buah extends StatelessWidget {
   Widget _buildNeeds(BuildContext context, int index) {
