@@ -51,7 +51,9 @@ class Sayuran extends StatelessWidget {
                           Text(
                             sayurSayurann.name,
                             style: TextStyle(
-                                fontSize: 16.0, fontWeight: FontWeight.bold),
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ],
                       ),
@@ -66,7 +68,9 @@ class Sayuran extends StatelessWidget {
                           Text(
                             sayurSayurann.price,
                             style: TextStyle(
-                                fontSize: 16.0, fontWeight: FontWeight.bold),
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ],
                       ),
@@ -99,13 +103,14 @@ class Sayuran extends StatelessWidget {
         Container(
           height: size.height * 0.4,
           child: ListView.builder(
-              physics: BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              itemCount: sayurSayuran.length,
-              itemBuilder: (context, index) {
-                return _buildNeeds(context, index);
-              }),
-        )
+            physics: BouncingScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            itemCount: sayurSayuran.length,
+            itemBuilder: (context, index) {
+              return _buildNeeds(context, index);
+            },
+          ),
+        ),
       ],
     );
   }

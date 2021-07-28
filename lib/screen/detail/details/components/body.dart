@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pi_pasar/constants.dart';
-import 'package:pi_pasar/model/buah_buahan.dart';
 import 'package:pi_pasar/model/sayur_sayuran.dart';
 
 class Body extends StatelessWidget {
@@ -93,12 +92,12 @@ class Body extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(
                     top: 600,
-                    left: 180,
+                    left: 100,
                     right: kDefaultPadding,
                   ),
                   child: SizedBox(
                     height: 50,
-                    width: 300,
+                    width: 500,
                     child: FlatButton(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18),
@@ -108,12 +107,24 @@ class Body extends StatelessWidget {
                       child: Text(
                         "Buy Now".toUpperCase(),
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
                       ),
                     ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: 600,
+                    left: 30,
+                    right: kDefaultPadding,
+                  ),
+                  child: Icon(
+                    Icons.shopping_cart_outlined,
+                    color: Colors.green,
+                    size: 45,
                   ),
                 ),
                 Image.asset(needs.imageAsset),

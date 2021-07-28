@@ -37,7 +37,8 @@ var sayurSayuran = [
       name: 'Kangkung',
       price: 'Rp. 7.000',
       color: kPrimaryColor,
-      description: 'Kangkung Hijau Fresh Per / ikat',
+      description:
+          'Kangkung mengandung aneka nutrisi yang baik untuk kesehatan tubuh, seperti: zat besi, protein, vitamin C dan Vitamin A, lemak, karbohidrat, klasium, dan vitamin B1',
       imageAsset: 'images/kangkung.png'),
   SayurSayuran(
       name: 'Paprika',
@@ -65,7 +66,8 @@ var sayurSayuran = [
     name: 'Brokoli',
     price: 'Rp. 12.000',
     color: kSecondColor,
-    description: 'Brokoli',
+    description:
+        'Brokoli fresh kualitas premium dengan harga terjangkau hadir dengan berbagai pilihan varian',
     imageAsset: 'images/brokoli.png',
   ),
 ];
