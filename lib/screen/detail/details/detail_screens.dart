@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:pi_pasar/model/sayur_sayuran.dart';
+import 'package:pi_pasar/model/vegetables.dart';
 import 'package:pi_pasar/screen/detail/details/components/body.dart';
 
 var informationTextStyle = TextStyle(fontFamily: 'Oxygen');

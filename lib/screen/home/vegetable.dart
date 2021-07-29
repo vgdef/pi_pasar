@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pi_pasar/constants.dart';
-import 'package:pi_pasar/model/sayur_sayuran.dart';
+import 'package:pi_pasar/model/vegetables.dart';
 import 'package:pi_pasar/screen/detail/details/detail_screens.dart';
 
 class Vegetable extends StatelessWidget {
