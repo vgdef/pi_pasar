@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pi_pasar/constants.dart';
 import 'package:pi_pasar/screen/home/components/search_box.dart';
-import 'package:pi_pasar/screen/home/buah.dart';
-import 'package:pi_pasar/screen/home/sayuran.dart';
+import 'package:pi_pasar/screen/home/fruit.dart';
+import 'package:pi_pasar/screen/home/vegetable.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -37,8 +37,8 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SearchBox(),
-            Sayuran(),
-            Buah(),
+            Vegetable(),
+            Fruit(),
           ],
         ),
       ),

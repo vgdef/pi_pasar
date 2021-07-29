@@ -3,7 +3,7 @@ import 'package:pi_pasar/constants.dart';
 import 'package:pi_pasar/model/sayur_sayuran.dart';
 import 'package:pi_pasar/screen/detail/details/detail_screens.dart';
 
-class Sayuran extends StatelessWidget {
+class Vegetable extends StatelessWidget {
   Widget _buildNeeds(BuildContext context, int index) {
     Size size = MediaQuery.of(context).size;
     SayurSayuran sayurSayurann = sayurSayuran[index];

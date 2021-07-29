@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pi_pasar/model/buah_buahan.dart';
+import 'package:pi_pasar/model/fruits.dart';
 import 'package:pi_pasar/constants.dart';
 import 'package:pi_pasar/screen/detail/detailb/detail_screenb.dart';
 
-class Buah extends StatelessWidget {
+class Fruit extends StatelessWidget {
   Widget _buildNeeds(BuildContext context, int index) {
     Size size = MediaQuery.of(context).size;
     BuahBuahan buahBuahann = buahBuahan[index];

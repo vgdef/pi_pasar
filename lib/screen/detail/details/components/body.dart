@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pi_pasar/constants.dart';
 import 'package:pi_pasar/model/sayur_sayuran.dart';
+import 'package:pi_pasar/screen/home/components/favorite_button.dart';
 
 class Body extends StatelessWidget {
   final SayurSayuran needs;
@@ -133,30 +134,6 @@ class Body extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class FavoriteButton extends StatefulWidget {
-  @override
-  _FavoriteButtonState createState() => _FavoriteButtonState();
-}
-
-class _FavoriteButtonState extends State<FavoriteButton> {
-  bool isFavorite = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: Icon(
-        isFavorite ? Icons.favorite : Icons.favorite_border,
-        color: Colors.red,
-      ),
-      onPressed: () {
-        setState(() {
-          isFavorite = !isFavorite;
-        });
-      },
     );
   }
 }
