@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:pi_pasar/screen/home/drawer_screen.dart';
 import 'package:pi_pasar/screen/home/home_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    home: MyApp(),
+    theme: ThemeData(fontFamily: 'Circular'),
+  ));
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomeScreen(),
+    return Scaffold(
+      body: Stack(
+        children: [
+          DrawerScreen(),
+          HomeScreen(),
+        ],
+      ),
     );
   }
 }

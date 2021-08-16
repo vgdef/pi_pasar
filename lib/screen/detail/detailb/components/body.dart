@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pi_pasar/constants.dart';
 import 'package:pi_pasar/model/fruits.dart';
-import 'package:pi_pasar/screen/detail/details/components/body.dart';
 import 'package:pi_pasar/screen/home/components/favorite_button.dart';
 
 class Body extends StatelessWidget {
@@ -129,7 +128,10 @@ class Body extends StatelessWidget {
                     size: 45,
                   ),
                 ),
-                Image.asset(need.imageAsset),
+                Hero(
+                  tag: "images",
+                  child: Image.asset(need.imageAsset),
+                ),
               ],
             ),
           ),

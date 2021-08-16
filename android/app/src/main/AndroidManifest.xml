@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pi_pasar">
    <application
-        android:label="pi_pasar"
+        android:label="Pi Pasar"
         android:icon="@mipmap/pipasar">
         <activity
             android:name=".MainActivity"
