@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pi_pasar/screen/home/drawer_screen.dart';
 import 'package:pi_pasar/screen/home/home_screen.dart';
+// import 'package:pi_pasar/model/fruits.dart';
 
 void main() {
   runApp(MaterialApp(

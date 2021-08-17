@@ -1,0 +1,32 @@
+// import 'dart:async';
+// import 'dart:convert';
+
+// import 'package:pi_pasar/model/fruits.dart';
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
+import 'package:pi_pasar/model/fruits.dart';
+
+
+class FruitApi {
+  final String baseUrl = "http://127.0.0.1:3000";
+
+  // Client client = Client();
+
+ Future<List<BuahBuahan>> getFruit() async {
+    final response = await http.get('http://127.0.0.1:3000');
+    
+    if (response.statusCode == 200) {
+      // If the server did return a 200 OK response,
+      // then parse the JSON.
+      return fruitFromJson(jsonDecode(response.body));
+    } else {
+      return null;
+      // If the server did not return a 200 OK response,
+      // then throw an exception.
+      // throw Exception('Failed to load album');
+    }
+  }
+
+  Future<List<BuahBuahan>> fruitFromJson(jsonDecode) {}
+}

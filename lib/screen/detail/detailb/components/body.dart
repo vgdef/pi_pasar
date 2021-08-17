@@ -4,7 +4,7 @@ import 'package:pi_pasar/model/fruits.dart';
 import 'package:pi_pasar/screen/home/components/favorite_button.dart';
 
 class Body extends StatelessWidget {
-  final BuahBuahan need;
+  final Fruits need;
 
   Body({this.need});
 

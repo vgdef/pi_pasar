@@ -2,48 +2,54 @@ import 'package:flutter/material.dart';
 import 'package:pi_pasar/model/fruits.dart';
 import 'package:pi_pasar/constants.dart';
 import 'package:pi_pasar/screen/detail/detailb/detail_screenb.dart';
+import 'package:pi_pasar/services/api_manager.dart';
 
-class Fruit extends StatelessWidget {
+
+class Fruit extends StatefulWidget {
+  const Fruit({Key key}) : super(key: key);
+  @override
+  _FruitState createState() => _FruitState();
+}
+
+class _FruitState extends State<Fruit> {
+  Future<Fruits> _fruitModel;
+  List <Fruits>__fruitModel;
+
+
+  @override
+  void initState() {
+    _fruitModel = API_Manager().getFruits();
+    super.initState();
+   
+  }
+
+  // @override
   Widget _buildNeeds(BuildContext context, int index) {
-    Size size = MediaQuery.of(context).size;
-    BuahBuahan buahBuahann = buahBuahan[index];
+    // Size size = MediaQuery.of(context).size;
+    // Fruits buahBuahann = ;
 
     return InkWell(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return DetailScreenb(need: buahBuahann);
+          return DetailScreenb(need: __fruitModel);
         }));
       },
       child: Padding(
         padding: EdgeInsets.all(kDefaultPadding / 2),
-        child: Container(
-          width: size.width * 0.3,
-          child: Column(
-            children: <Widget>[
-              Expanded(
-                flex: 1,
-                child: Image.asset(
-                  buahBuahann.imageAsset,
-                  fit: BoxFit.fitWidth,
-                ),
-              ),
-              Expanded(
-                flex: 2,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: <Widget>[
-                      Text(
-                        buahBuahann.name,
-                        style: TextStyle(
-                            fontSize: 16.0, fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
+        child: FutureBuilder<Fruits>(
+          future: _fruitModel,
+          builder: (context, snapshot) {
+           if (snapshot.hasData) {
+              return ListView.builder(itemBuilder: (context, index){
+                return Container(
+                  height: 100,
+                  color: Colors.red,
+                );
+            });
+           } else 
+            return Center(child: CircularProgressIndicator());
+          },
+
         ),
       ),
     );
@@ -58,7 +64,7 @@ class Fruit extends StatelessWidget {
         Padding(
           padding: EdgeInsets.all(kDefaultPadding),
           child: Text(
-            'Buah ',
+            'Buah',
             style: TextStyle(
               fontSize: 20,
               letterSpacing: 1,
@@ -71,7 +77,7 @@ class Fruit extends StatelessWidget {
           child: ListView.builder(
             physics: BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
-            itemCount: buahBuahan.length,
+            // itemCount: __fruitModel.length,
             itemBuilder: (context, index) {
               return _buildNeeds(context, index);
             },
