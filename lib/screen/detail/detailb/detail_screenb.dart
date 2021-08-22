@@ -13,11 +13,10 @@ class DetailScreenb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  return ListView.builder(
-    // itemCount: need.length,
-    itemBuilder: (context, index) {
-
-  });
+    return Scaffold(
+      // backgroundColor: need.colors,
+      // body: Body(need: need),
+    );
     
   }
 }

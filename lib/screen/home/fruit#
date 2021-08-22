@@ -1,0 +1,131 @@
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'package:pi_pasar/model/fruits.dart';
+import 'package:pi_pasar/constants.dart';
+import 'package:pi_pasar/screen/detail/detailb/detail_screenb.dart';
+import 'package:pi_pasar/services/api_manager.dart';
+import 'package:pi_pasar/constants/strings.dart';
+import 'package:pi_pasar/model/fruits.dart';
+import 'dart:async';
+
+class Fruit extends StatefulWidget {
+  const Fruit({Key key}) : super(key: key);
+  @override
+  _FruitState createState() => _FruitState();
+}
+
+class _FruitState extends State<Fruit> {
+  // Future<Fruits> fruitModel;
+  // List <Fruits>__fruitModel;
+  // final List<Fruits> need;
+
+  
+
+    Future<List<dynamic>> getFruits() async {
+    Client client = Client();
+    var result = await client.get(Uri.parse(Strings.base_url));
+    return json.decode(result.body);
+  }
+
+  @override
+    // _fruitModel = API_Manager.getFruits();
+  void initState() {
+    super.initState();
+   
+  }
+
+  // @override
+  Widget _buildNeeds(BuildContext context, int index) {
+    // Size size = MediaQuery.of(context).size;
+    // Fruits buahBuahann = ;
+
+    return InkWell(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          // var fruits = API_Manager.getFruits();
+          return Scaffold(
+            body: Container(
+              child: FutureBuilder<List<Fruits>>(
+                future: getFruits(),
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  if (snapshot.hasData) {
+                    return ListView.builder(
+                      padding: EdgeInsets.all(10),
+                      itemCount: snapshot.data.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return ListTile(
+                            title: Text(snapshot.data),
+                        ),
+                      },
+                    
+                  
+                    );
+                }
+                
+              )
+            )
+            
+          );
+          // return DetailScreenb(need: _fruitModel['index']);
+        }));
+      },
+      child: Padding(
+        padding: EdgeInsets.all(kDefaultPadding / 2),
+        child: FutureBuilder<List<Fruits>>(
+          future: getFruits(),
+          builder: (context, snapshot) {
+           if (snapshot.hasData) {
+              return ListView.builder(itemBuilder: (context, index){
+                return Container(
+                  height: 100,
+                  color: Colors.red,
+                );
+            });
+           } else 
+            return Center(child: CircularProgressIndicator());
+          },
+
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.all(kDefaultPadding),
+          child: Text(
+            'Buah',
+            style: TextStyle(
+              fontSize: 20,
+              letterSpacing: 1,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        Container(
+          height: size.height * 0.4,
+          child: ListView.builder(
+            physics: BouncingScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            // itemCount: __fruitModel.length,
+            itemBuilder: (context, index) {
+              return _buildNeeds(context, index);
+            },
+          ),
+        )
+      ],
+    );
+  }
+  // @override
+  // void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+  //   super.debugFillProperties(properties);
+  //   properties.add(DiagnosticsProperty<Future<Fruits>>('_fruitModel', _fruitModel));
+  // }
+}

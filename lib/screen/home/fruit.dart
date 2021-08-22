@@ -1,89 +1,89 @@
-import 'package:flutter/material.dart';
-import 'package:pi_pasar/model/fruits.dart';
-import 'package:pi_pasar/constants.dart';
-import 'package:pi_pasar/screen/detail/detailb/detail_screenb.dart';
-import 'package:pi_pasar/services/api_manager.dart';
+import 'dart:async';
+import 'dart:convert';
 
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+Future<Album> fetchAlbum() async {
+  final response = await http
+      .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+
+  if (response.statusCode == 200) {
+    // If the server did return a 200 OK response,
+    // then parse the JSON.
+    return Album.fromJson(jsonDecode(response.body));
+  } else {
+    // If the server did not return a 200 OK response,
+    // then throw an exception.
+    throw Exception('Failed to load album');
+  }
+}
+
+class Album {
+  final int userId;
+  final int id;
+  final String title;
+
+  Album({
+    this.userId,
+    this.id,
+    this.title,
+  });
+
+  factory Album.fromJson(Map<String, dynamic> json) {
+    return Album(
+      userId: json['userId'],
+      id: json['id'],
+      title: json['title'],
+    );
+  }
+}
+
+// void main() => runApp(const MyApp());
 
 class Fruit extends StatefulWidget {
   const Fruit({Key key}) : super(key: key);
+
   @override
-  _FruitState createState() => _FruitState();
+  _MyAppState createState() => _MyAppState();
 }
 
-class _FruitState extends State<Fruit> {
-  Future<Fruits> _fruitModel;
-  List <Fruits>__fruitModel;
-
+class _MyAppState extends State<Fruit> {
+  Future<Album> futureAlbum;
 
   @override
   void initState() {
-    _fruitModel = API_Manager().getFruits();
     super.initState();
-   
-  }
-
-  // @override
-  Widget _buildNeeds(BuildContext context, int index) {
-    // Size size = MediaQuery.of(context).size;
-    // Fruits buahBuahann = ;
-
-    return InkWell(
-      onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return DetailScreenb(need: __fruitModel);
-        }));
-      },
-      child: Padding(
-        padding: EdgeInsets.all(kDefaultPadding / 2),
-        child: FutureBuilder<Fruits>(
-          future: _fruitModel,
-          builder: (context, snapshot) {
-           if (snapshot.hasData) {
-              return ListView.builder(itemBuilder: (context, index){
-                return Container(
-                  height: 100,
-                  color: Colors.red,
-                );
-            });
-           } else 
-            return Center(child: CircularProgressIndicator());
-          },
-
-        ),
-      ),
-    );
+    futureAlbum = fetchAlbum();
   }
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: EdgeInsets.all(kDefaultPadding),
-          child: Text(
-            'Buah',
-            style: TextStyle(
-              fontSize: 20,
-              letterSpacing: 1,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+    return MaterialApp(
+      title: 'Fetch Data Example',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Fetch Data Example'),
         ),
-        Container(
-          height: size.height * 0.4,
-          child: ListView.builder(
-            physics: BouncingScrollPhysics(),
-            scrollDirection: Axis.horizontal,
-            // itemCount: __fruitModel.length,
-            itemBuilder: (context, index) {
-              return _buildNeeds(context, index);
+        body: Center(
+          child: FutureBuilder<Album>(
+            future: futureAlbum,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Text(snapshot.data.title);
+              } else if (snapshot.hasError) {
+                return Text('${snapshot.error}');
+              }
+
+              // By default, show a loading spinner.
+              return const CircularProgressIndicator();
             },
           ),
-        )
-      ],
+        ),
+      ),
     );
   }
 }

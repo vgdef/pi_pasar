@@ -1,4 +1,5 @@
 class Strings {
   static String base_url = 
-    'http://127.0.0.1:3000/';
+    'https://e384-182-1-203-107.ngrok.io/';
+
 }
